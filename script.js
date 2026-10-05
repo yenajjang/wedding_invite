@@ -36,9 +36,47 @@ document.querySelector('[data-share="native"]')?.addEventListener('click', async
   if(navigator.share){await navigator.share({title:document.title,text:'윤수한 & 김서령의 결혼식에 초대합니다.',url:location.href});}
   else {await navigator.clipboard.writeText(location.href);alert('링크를 복사했습니다.');}
 });
-document.querySelector('[data-share="kakao"]')?.addEventListener('click',()=>{
-  alert('카카오톡 공유는 Kakao JavaScript SDK 키 연결 후 활성화할 수 있습니다.');
-});
+(() => {
+  const kakaoButton = document.querySelector('[data-share="kakao"]');
+  const KAKAO_JS_KEY = 'a3e39349ecc97d2539488d1540e62fd1';
+  const WEDDING_URL = 'https://wedding-seoryungsuhan.vercel.app/';
+  const WEDDING_IMAGE_URL = 'https://wedding-seoryungsuhan.vercel.app/assets/photo-01.jpeg';
+
+  if (!kakaoButton) return;
+
+  kakaoButton.addEventListener('click', () => {
+    if (!window.Kakao) {
+      alert('카카오톡 공유 기능을 불러오지 못했습니다. 잠시 후 다시 시도해주세요.');
+      return;
+    }
+
+    if (!Kakao.isInitialized()) {
+      Kakao.init(KAKAO_JS_KEY);
+    }
+
+    Kakao.Share.sendDefault({
+      objectType: 'feed',
+      content: {
+        title: '수한❤️서령의 결혼식에 초대합니다.',
+        description: '2026년 12월 19일 오후 4시 · 천주교 논현2동 성당',
+        imageUrl: WEDDING_IMAGE_URL,
+        link: {
+          mobileWebUrl: WEDDING_URL,
+          webUrl: WEDDING_URL
+        }
+      },
+      buttons: [
+        {
+          title: '청첩장 보기',
+          link: {
+            mobileWebUrl: WEDDING_URL,
+            webUrl: WEDDING_URL
+          }
+        }
+      ]
+    });
+  });
+})();
 
 
 document.querySelectorAll('[data-copy-account]').forEach((button) => {
@@ -300,4 +338,65 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.querySelector('[data-share="top"]')?.addEventListener('click', ()=>{
   window.scrollTo({top:0, behavior:'smooth'});
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const mapEl = document.getElementById('kakaoMap');
+  if (!mapEl) return;
+
+  const showMapError = () => {
+    mapEl.innerHTML = '<div class="kakao-map-error">지도를 불러오지 못했습니다.<br>아래 카카오맵 버튼을 이용해주세요.</div>';
+  };
+
+  if (!window.kakao || !kakao.maps) {
+    showMapError();
+    return;
+  }
+
+  kakao.maps.load(() => {
+    try {
+      const fallbackCenter = new kakao.maps.LatLng(37.5199, 127.0398);
+      const map = new kakao.maps.Map(mapEl, {
+        center: fallbackCenter,
+        level: 4
+      });
+
+      const geocoder = new kakao.maps.services.Geocoder();
+      const address = '서울 강남구 선릉로145길 17';
+
+      geocoder.addressSearch(address, (result, status) => {
+        if (status !== kakao.maps.services.Status.OK || !result.length) {
+          showMapError();
+          return;
+        }
+
+        const coords = new kakao.maps.LatLng(
+          Number(result[0].y),
+          Number(result[0].x)
+        );
+
+        map.setCenter(coords);
+
+        const marker = new kakao.maps.Marker({
+          map,
+          position: coords
+        });
+
+        const info = new kakao.maps.InfoWindow({
+          content: '<div style="padding:7px 10px;font-size:12px;white-space:nowrap;">천주교 논현2동 성당</div>'
+        });
+
+        info.open(map, marker);
+        mapEl.classList.add('is-loaded');
+
+        setTimeout(() => {
+          map.relayout();
+          map.setCenter(coords);
+        }, 100);
+      });
+    } catch (error) {
+      showMapError();
+    }
+  });
 });

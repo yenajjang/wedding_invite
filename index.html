@@ -163,11 +163,8 @@
       <h2>천주교 논현2동 성당</h2>
       <p class="address">서울 강남구 선릉로145길 17<br>02-516-5066</p>
 
-      <div class="map-placeholder" aria-label="논현2동성당 위치">
-        <div class="roads r1"></div><div class="roads r2"></div><div class="roads r3"></div>
-        <div class="map-pin">●</div>
-        <span class="map-name">논현2동성당</span>
-        <span class="map-caption">50m · kakao</span>
+      <div id="kakaoMap" class="kakao-map" aria-label="천주교 논현2동 성당 카카오맵">
+        <div class="kakao-map-loading">지도를 불러오는 중입니다.</div>
       </div>
 
       <div class="map-buttons">
@@ -251,6 +248,8 @@
     <button class="nav next" id="nextImage" aria-label="다음">›</button>
     <div id="counter"></div>
   </div>
+  <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=a3e39349ecc97d2539488d1540e62fd1&autoload=false&libraries=services"></script>
+  <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.8.3/kakao.min.js" crossorigin="anonymous"></script>
   <script src="script.js"></script>
 
   <div class="rsvp-modal" id="rsvpModal" aria-hidden="true">

@@ -465,3 +465,38 @@ html, body{
     }
   }
 }
+
+
+.kakao-map{
+  width:100%;
+  height:226px;
+  position:relative;
+  overflow:hidden;
+  background:#ecebea;
+}
+.kakao-map-loading{
+  position:absolute;
+  inset:0;
+  display:grid;
+  place-items:center;
+  color:#777f8a;
+  font-size:12px;
+  background:#ecebea;
+  z-index:1;
+}
+.kakao-map.is-loaded .kakao-map-loading{
+  display:none;
+}
+.kakao-map-error{
+  position:absolute;
+  inset:0;
+  display:grid;
+  place-items:center;
+  padding:24px;
+  text-align:center;
+  color:#777f8a;
+  font-size:12px;
+  line-height:1.7;
+  background:#ecebea;
+  z-index:2;
+}
