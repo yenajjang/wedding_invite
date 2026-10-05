@@ -3,52 +3,123 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-  <meta name="theme-color" content="#ffffff" />
+  <meta name="theme-color" content="#171a22" />
   <meta name="description" content="윤수한 & 김서령의 결혼식에 초대합니다." />
-  <meta property="og:title" content="수한 & 서령의 결혼식에 초대합니다." />
+  <meta property="og:title" content="윤수한 & 김서령의 결혼식에 초대합니다." />
   <meta property="og:description" content="2026년 12월 19일 오후 4시 · 논현2동성당" />
   <meta property="og:image" content="assets/photo-01.jpeg" />
-  <title>The Wedding of Suhan & Seoryung</title>
+  <title>A Letter to You · Suhan & Seoryung</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Noto+Sans+KR:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400&display=swap" rel="stylesheet">
 </head>
 <body>
+
+  <audio id="weddingBgm" src="assets/wedding-bgm.mp3" autoplay loop preload="auto"></audio>
+  <button type="button" class="bgm-toggle" id="bgmToggle" aria-label="배경음악 끄기" aria-pressed="true">
+    <span class="bgm-icon bgm-icon-on" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none">
+        <path d="M4 14h4l5 4V6L8 10H4z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+        <path d="M16 9.5c1.4 1 2.2 2.5 2.2 4.5s-.8 3.5-2.2 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M18.8 7c2.1 1.7 3.2 4.1 3.2 7s-1.1 5.3-3.2 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+    </span>
+    <span class="bgm-icon bgm-icon-off" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none">
+        <path d="M4 14h4l5 4V6L8 10H4z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+        <path d="M5 5l14 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </span>
+  </button>
+
+
+  <div class="wedding-dday-modal" id="weddingDdayModal" role="dialog" aria-modal="true" aria-labelledby="ddayTitle">
+    <div class="wedding-dday-card">
+      <p class="wedding-dday-label" id="ddayTitle">D-<span id="ddayNumber">0</span></p>
+      <p class="wedding-dday-copy">수한❤️서령의 결혼식이 <span id="ddayTextNumber">0</span>일 남았습니다.</p>
+      <button type="button" class="wedding-dday-close" id="ddayClose">닫기</button>
+    </div>
+  </div>
+
   <main class="invite">
-    <header class="site-header transparent" id="topHeader">
-      <a href="#hero" class="brand">The Wedding of</a>
-      <button class="menu-btn" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
-    </header>
 
     <section class="hero" id="hero">
-      <img src="assets/photo-01.jpeg" alt="신랑 신부와 반려견" fetchpriority="high">
+      <img src="assets/photo-01.jpeg" alt="윤수한 김서령 웨딩 사진" fetchpriority="high">
     </section>
 
-    <section class="intro centered">
-      <h1>Suhan<br>Seoryung</h1>
-      <p class="names-ko"><strong>윤수한 &amp; 김서령</strong></p>
-      <p class="meta">2026년 12월 19일, 오후 4시</p>
-      <p class="meta">논현2동성당</p>
+    <section class="intro section-pad">
+      <div class="wedding-day"><svg class="wedding-day-svg" viewBox="0 0 387.05 64.05" role="img" aria-label="WEDDING DAY.">
+  <g transform="translate(0,47.25) scale(0.02100000,-0.02100000)" fill="currentColor">
+    <path d="M1631 1427H1449L1285 961L1499 316L1885 1427H1726V1500H2118V1427H1966L1464 -20H1358L1113 705L861 -20H741L253 1427H60V1500H1631ZM898 316 1073 824 869 1427H528ZM1130 1427 1245 1081 1367 1427Z" transform="translate(0,0)"/>
+<path d="M794 542Q782 642 728.0 690.5Q674 739 589 739H503V73H759Q964 73 1046.0 166.5Q1128 260 1139 450H1212V0H72V73H253V1427H72V1500H1193V1090H1119Q1108 1251 1031.5 1339.0Q955 1427 780 1427H503V812H589Q674 812 728.0 856.5Q782 901 794 1001H868V542Z" transform="translate(2377,0)"/>
+<path d="M672 0H72V73H253V1427H72V1500H672Q902 1500 1068.0 1403.5Q1234 1307 1323.0 1137.5Q1412 968 1412 750Q1412 532 1319.0 362.5Q1226 193 1059.5 96.5Q893 0 672 0ZM672 1427H503V73H672Q841 73 939.5 163.5Q1038 254 1080.5 407.5Q1123 561 1123 750Q1123 939 1076.5 1092.5Q1030 1246 930.5 1336.5Q831 1427 672 1427Z" transform="translate(3890,0)"/>
+<path d="M672 0H72V73H253V1427H72V1500H672Q902 1500 1068.0 1403.5Q1234 1307 1323.0 1137.5Q1412 968 1412 750Q1412 532 1319.0 362.5Q1226 193 1059.5 96.5Q893 0 672 0ZM672 1427H503V73H672Q841 73 939.5 163.5Q1038 254 1080.5 407.5Q1123 561 1123 750Q1123 939 1076.5 1092.5Q1030 1246 930.5 1336.5Q831 1427 672 1427Z" transform="translate(5624,0)"/>
+<path d="M72 73H293V1427H72V1500H782V1427H542V73H782V0H72Z" transform="translate(7358,0)"/>
+<path d="M72 73H283V1427H72V1500H606L1272 414V1427H1051V1500H1559V1427H1348V-20H1245L359 1415V73H590V0H72Z" transform="translate(8412,0)"/>
+<path d="M897 610H1488V530H1377V320Q1341 271 1292.5 212.5Q1244 154 1176.5 101.0Q1109 48 1017.0 14.0Q925 -20 803 -20Q587 -20 435.0 77.5Q283 175 203.0 348.5Q123 522 123 750Q123 921 176.0 1062.0Q229 1203 325.0 1305.5Q421 1408 550.5 1464.0Q680 1520 832 1520Q922 1520 1010.0 1489.0Q1098 1458 1170 1404L1289 1500H1353V1075H1279Q1261 1182 1202.5 1263.0Q1144 1344 1055.0 1389.5Q966 1435 857 1435Q736 1435 651.0 1379.5Q566 1324 513.5 1228.5Q461 1133 436.5 1009.5Q412 886 412 750Q412 614 429.5 488.5Q447 363 490.0 265.0Q533 167 609.0 110.0Q685 53 803 53Q907 53 969.0 89.0Q1031 125 1063.0 171.5Q1095 218 1108 250V530H897Z" transform="translate(10242,0)"/>
+
+<path d="M672 0H72V73H253V1427H72V1500H672Q902 1500 1068.0 1403.5Q1234 1307 1323.0 1137.5Q1412 968 1412 750Q1412 532 1319.0 362.5Q1226 193 1059.5 96.5Q893 0 672 0ZM672 1427H503V73H672Q841 73 939.5 163.5Q1038 254 1080.5 407.5Q1123 561 1123 750Q1123 939 1076.5 1092.5Q1030 1246 930.5 1336.5Q831 1427 672 1427Z" transform="translate(12691,0)"/>
+<path d="M72 73H246L762 1529H878L1383 73H1551V0H913V73H1094L972 449H460L329 73H513V0H72ZM726 1211 486 522H949Z" transform="translate(14425,0)"/>
+<path d="M469 73H648V721L217 1427H53V1500H694V1427H507L862 837L1237 1427H1052V1500H1453V1427H1322L898 758V73H1098V0H469Z" transform="translate(16248,0)"/>
+<path d="M80 130Q80 192 124.0 236.5Q168 281 230 281Q292 281 336.0 236.5Q380 192 380 130Q380 68 336.0 24.0Q292 -20 230 -20Q168 -20 124.0 24.0Q80 68 80 130Z" transform="translate(17972,0)"/>
+  </g>
+</svg></div>
+      <p class="names-ko">윤수한 &amp; 김서령</p>
+      <p class="intro-meta">2026년 12월 19일, 오후 4시</p>
+      <p class="intro-meta">천주교 논현2동 성당</p>
     </section>
 
-    <section class="invitation centered section-pad">
-      <p class="english-lead">We invite you to the<br>beginning of our eternity.</p>
+    <section class="dark invitation section-pad">
+      <div class="english-lead"><svg class="english-lead-svg" viewBox="0 0 142.52 67.10" role="img" aria-label="Join us">
+  <g transform="translate(0,49.50) scale(0.02200000,-0.02200000)" fill="currentColor">
+    <path d="M433 1500H1147V1473H940L687 340Q650 279 602.0 209.5Q554 140 495.5 78.5Q437 17 367.5 -22.0Q298 -61 218 -61Q132 -61 69.0 -27.0Q6 7 -29.0 62.5Q-64 118 -64 180Q-64 254 -20.0 296.5Q24 339 81 339Q130 339 178.0 302.5Q226 266 226 193Q226 127 181.5 90.5Q137 54 81 54Q32 54 -10 86Q20 34 76.0 1.5Q132 -31 201 -31Q291 -31 341.5 75.0Q392 181 438 380L691 1473H433Z" transform="translate(0,0)"/>
+<path d="M375 -20Q217 -20 137.5 67.0Q58 154 58 297Q58 425 103.5 541.0Q149 657 228.0 747.0Q307 837 409.0 888.5Q511 940 624 940Q781 940 862.0 851.5Q943 763 943 620Q943 493 898.0 377.5Q853 262 774.0 172.5Q695 83 592.5 31.5Q490 -20 375 -20ZM364 7Q421 7 477.0 59.0Q533 111 583.0 196.5Q633 282 671.0 384.5Q709 487 731.0 590.0Q753 693 753 777Q753 840 724.5 876.0Q696 912 634 912Q577 912 521.0 860.5Q465 809 415.0 723.0Q365 637 327.0 534.5Q289 432 267.0 329.5Q245 227 245 142Q245 80 273.5 43.5Q302 7 364 7Z" transform="translate(995,0)"/>
+<path d="M315 1375Q315 1434 356.5 1477.0Q398 1520 459 1520Q520 1520 562.5 1477.0Q605 1434 605 1375Q605 1316 562.5 1272.5Q520 1229 459 1229Q398 1229 356.5 1272.5Q315 1316 315 1375ZM563 310Q495 139 423.0 59.5Q351 -20 236 -20Q148 -20 108.5 16.0Q69 52 69 112Q69 133 72.5 153.5Q76 174 80 190L278 893H132V920H492L262 93Q258 77 258 61Q258 24 292 24Q353 24 411.0 88.5Q469 153 537 319Z" transform="translate(2044,0)"/>
+<path d="M262 893H125V920H484L372 489Q421 602 487.0 705.5Q553 809 629.5 874.0Q706 939 786 939Q913 939 954.5 851.0Q996 763 960 639L802 103Q795 84 795 66Q795 30 829 30Q896 30 954.0 98.5Q1012 167 1073 319L1099 310Q1030 133 954.0 56.5Q878 -20 766 -20Q599 -20 599 120Q599 141 604.0 163.0Q609 185 614 202L742 623Q777 739 777.0 808.5Q777 878 712 878Q673 878 619.5 830.0Q566 782 510.0 700.0Q454 618 404.5 513.5Q355 409 322 294L246 0H32Z" transform="translate(2691,0)"/>
+
+<path d="M457 920 295 298Q265 180 263.0 111.0Q261 42 328 42Q367 42 422.5 90.0Q478 138 536.0 221.5Q594 305 645.0 411.0Q696 517 727 632L800 920H1018L796 93Q792 77 792 58Q792 25 824 25Q886 25 944.5 89.0Q1003 153 1070 319L1096 310Q1029 139 956.0 59.5Q883 -20 775 -20Q688 -20 646.0 20.5Q604 61 604 114Q604 144 614 183L675 426Q626 313 558.5 211.0Q491 109 413.0 44.5Q335 -20 254 -20Q162 -20 117.0 20.5Q72 61 65.0 129.5Q58 198 78 282L231 893H99V920Z" transform="translate(4426,0)"/>
+<path d="M759 264Q759 176 705.5 112.5Q652 49 565.0 14.5Q478 -20 376 -20Q281 -20 201.0 8.0Q121 36 73.0 89.0Q25 142 25 216Q25 268 58.0 306.0Q91 344 148 344Q198 344 230.5 311.0Q263 278 263 224Q263 169 227.5 140.5Q192 112 145 112Q116 112 91 121Q128 66 202.0 37.0Q276 8 365 8Q419 8 472.5 28.0Q526 48 561.0 86.5Q596 125 596 181Q596 247 551.0 293.5Q506 340 440.0 379.0Q374 418 308.0 458.5Q242 499 197.0 550.5Q152 602 152 677Q152 752 197.0 811.5Q242 871 323.0 906.0Q404 941 511 941Q611 941 677.5 911.5Q744 882 776.5 838.5Q809 795 809 750Q809 691 775.5 661.5Q742 632 699 632Q653 632 616.5 662.0Q580 692 580 748Q580 792 611.5 824.5Q643 857 694 857Q706 857 718 855Q685 880 636.0 896.0Q587 912 523 912Q445 912 379.5 873.5Q314 835 314 762Q314 701 359.0 658.5Q404 616 470.5 579.5Q537 543 603.0 501.5Q669 460 714.0 404.0Q759 348 759 264Z" transform="translate(5619,0)"/>
+  </g>
+</svg>
+<svg class="english-lead-svg" viewBox="0 0 328.31 67.10" role="img" aria-label="for our wedding">
+  <g transform="translate(0,49.50) scale(0.02200000,-0.02200000)" fill="currentColor">
+    <path d="M118 920H315L339 1023Q371 1158 428.5 1271.0Q486 1384 577.0 1452.0Q668 1520 798 1520Q880 1520 935.5 1490.5Q991 1461 1019.0 1416.5Q1047 1372 1047 1325Q1047 1263 1010.5 1225.5Q974 1188 918 1188Q868 1188 828.5 1220.5Q789 1253 789 1312Q789 1368 828.5 1403.0Q868 1438 920 1438Q951 1438 981 1421Q956 1451 914.0 1471.5Q872 1492 813 1492Q737 1492 690.5 1431.0Q644 1370 613.5 1266.0Q583 1162 553 1034L526 920H794V893H519L305 -23Q274 -157 216.0 -270.0Q158 -383 66.5 -451.5Q-25 -520 -156 -520Q-238 -520 -293.5 -490.5Q-349 -461 -377.0 -416.5Q-405 -372 -405 -325Q-405 -261 -367.5 -224.5Q-330 -188 -276 -188Q-224 -188 -186.0 -220.5Q-148 -253 -148 -312Q-148 -371 -189.0 -404.5Q-230 -438 -280 -438Q-309 -438 -335 -425Q-310 -454 -268.5 -473.0Q-227 -492 -170 -492Q-92 -492 -45.0 -431.0Q2 -370 33.5 -266.5Q65 -163 95 -36L309 893H118Z" transform="translate(0,0)"/>
+<path d="M375 -20Q217 -20 137.5 67.0Q58 154 58 297Q58 425 103.5 541.0Q149 657 228.0 747.0Q307 837 409.0 888.5Q511 940 624 940Q781 940 862.0 851.5Q943 763 943 620Q943 493 898.0 377.5Q853 262 774.0 172.5Q695 83 592.5 31.5Q490 -20 375 -20ZM364 7Q421 7 477.0 59.0Q533 111 583.0 196.5Q633 282 671.0 384.5Q709 487 731.0 590.0Q753 693 753 777Q753 840 724.5 876.0Q696 912 634 912Q577 912 521.0 860.5Q465 809 415.0 723.0Q365 637 327.0 534.5Q289 432 267.0 329.5Q245 227 245 142Q245 80 273.5 43.5Q302 7 364 7Z" transform="translate(784,0)"/>
+<path d="M257 893H101V920H463L384 593Q420 686 466.5 764.5Q513 843 570.5 891.0Q628 939 697 939Q767 939 809.0 899.5Q851 860 851 799Q851 742 817.0 702.5Q783 663 726 663Q671 663 635.5 697.0Q600 731 600 785Q600 836 635.0 869.5Q670 903 727 903Q745 903 761 900Q733 913 697 913Q628 913 570.5 859.5Q513 806 466.5 720.5Q420 635 384.5 537.5Q349 440 326 352L241 0H33Z" transform="translate(1833,0)"/>
+
+<path d="M375 -20Q217 -20 137.5 67.0Q58 154 58 297Q58 425 103.5 541.0Q149 657 228.0 747.0Q307 837 409.0 888.5Q511 940 624 940Q781 940 862.0 851.5Q943 763 943 620Q943 493 898.0 377.5Q853 262 774.0 172.5Q695 83 592.5 31.5Q490 -20 375 -20ZM364 7Q421 7 477.0 59.0Q533 111 583.0 196.5Q633 282 671.0 384.5Q709 487 731.0 590.0Q753 693 753 777Q753 840 724.5 876.0Q696 912 634 912Q577 912 521.0 860.5Q465 809 415.0 723.0Q365 637 327.0 534.5Q289 432 267.0 329.5Q245 227 245 142Q245 80 273.5 43.5Q302 7 364 7Z" transform="translate(3301,0)"/>
+<path d="M457 920 295 298Q265 180 263.0 111.0Q261 42 328 42Q367 42 422.5 90.0Q478 138 536.0 221.5Q594 305 645.0 411.0Q696 517 727 632L800 920H1018L796 93Q792 77 792 58Q792 25 824 25Q886 25 944.5 89.0Q1003 153 1070 319L1096 310Q1029 139 956.0 59.5Q883 -20 775 -20Q688 -20 646.0 20.5Q604 61 604 114Q604 144 614 183L675 426Q626 313 558.5 211.0Q491 109 413.0 44.5Q335 -20 254 -20Q162 -20 117.0 20.5Q72 61 65.0 129.5Q58 198 78 282L231 893H99V920Z" transform="translate(4350,0)"/>
+<path d="M257 893H101V920H463L384 593Q420 686 466.5 764.5Q513 843 570.5 891.0Q628 939 697 939Q767 939 809.0 899.5Q851 860 851 799Q851 742 817.0 702.5Q783 663 726 663Q671 663 635.5 697.0Q600 731 600 785Q600 836 635.0 869.5Q670 903 727 903Q745 903 761 900Q733 913 697 913Q628 913 570.5 859.5Q513 806 466.5 720.5Q420 635 384.5 537.5Q349 440 326 352L241 0H33Z" transform="translate(5543,0)"/>
+
+<path d="M357 257Q277 25 387 25Q460 25 519.0 89.0Q578 153 625.0 264.0Q672 375 709 514L809 920H1019L886 371Q870 308 854.5 245.0Q839 182 836.0 129.0Q833 76 855.5 44.5Q878 13 939 13Q1031 13 1105.5 64.0Q1180 115 1236.5 197.5Q1293 280 1332.5 377.0Q1372 474 1393.5 566.5Q1415 659 1418 728Q1381 660 1295 660Q1235 660 1195.5 697.0Q1156 734 1156 794Q1156 855 1196.5 896.5Q1237 938 1300 938Q1365 938 1406.5 885.5Q1448 833 1448 753Q1448 687 1429.0 589.0Q1410 491 1370.0 385.5Q1330 280 1268.0 188.0Q1206 96 1120.5 38.0Q1035 -20 924 -20Q842 -20 780.0 11.5Q718 43 687.0 114.5Q656 186 666 305Q632 214 586.5 140.5Q541 67 480.5 23.5Q420 -20 339 -20Q197 -20 150.5 67.0Q104 154 147 282L331 821Q339 846 339 862Q339 893 305 893Q228 893 169.5 817.0Q111 741 57 601L31 610Q88 760 161.5 850.0Q235 940 362 940Q445 940 489.5 906.0Q534 872 534 819Q534 769 518 724Z" transform="translate(7011,0)"/>
+<path d="M252 180Q252 88 292.5 52.0Q333 16 395 16Q510 16 609.0 87.5Q708 159 778 273L802 258Q759 185 697.0 121.5Q635 58 552.0 19.0Q469 -20 365 -20Q212 -20 133.0 70.5Q54 161 54 300Q54 419 98.0 533.0Q142 647 221.0 739.0Q300 831 405.0 885.5Q510 940 632 940Q757 940 826.5 882.0Q896 824 896 740Q896 639 811.5 565.5Q727 492 587.5 449.0Q448 406 281 394Q252 273 252 180ZM637 912Q581 912 528.0 869.0Q475 826 429.0 754.0Q383 682 346.5 594.5Q310 507 287 417Q412 432 508.0 489.0Q604 546 658.5 630.5Q713 715 713 812Q713 851 696.0 881.5Q679 912 637 912Z" transform="translate(8551,0)"/>
+<path d="M1080 310Q1012 139 940.5 59.5Q869 -20 761 -20Q681 -20 644.0 20.5Q607 61 607 126Q607 136 607.5 151.5Q608 167 611 183L626 261Q572 145 493.0 62.5Q414 -20 313 -20Q178 -20 117.0 67.5Q56 155 56 305Q56 420 99.0 532.5Q142 645 213.5 737.0Q285 829 372.0 884.5Q459 940 548 940Q645 940 684.0 867.5Q723 795 726 688L936 1473H773V1500H1154L779 91Q775 76 775 60Q775 46 782.5 35.0Q790 24 810 24Q870 24 928.0 88.5Q986 153 1054 319ZM704 673Q704 766 678.5 824.5Q653 883 591 883Q545 883 498.0 838.5Q451 794 409.0 720.0Q367 646 333.5 557.5Q300 469 281.0 379.5Q262 290 262 216Q262 41 372 41Q433 41 492.5 102.5Q552 164 599.5 261.5Q647 359 675.5 468.5Q704 578 704 673Z" transform="translate(9547,0)"/>
+<path d="M1080 310Q1012 139 940.5 59.5Q869 -20 761 -20Q681 -20 644.0 20.5Q607 61 607 126Q607 136 607.5 151.5Q608 167 611 183L626 261Q572 145 493.0 62.5Q414 -20 313 -20Q178 -20 117.0 67.5Q56 155 56 305Q56 420 99.0 532.5Q142 645 213.5 737.0Q285 829 372.0 884.5Q459 940 548 940Q645 940 684.0 867.5Q723 795 726 688L936 1473H773V1500H1154L779 91Q775 76 775 60Q775 46 782.5 35.0Q790 24 810 24Q870 24 928.0 88.5Q986 153 1054 319ZM704 673Q704 766 678.5 824.5Q653 883 591 883Q545 883 498.0 838.5Q451 794 409.0 720.0Q367 646 333.5 557.5Q300 469 281.0 379.5Q262 290 262 216Q262 41 372 41Q433 41 492.5 102.5Q552 164 599.5 261.5Q647 359 675.5 468.5Q704 578 704 673Z" transform="translate(10714,0)"/>
+<path d="M315 1375Q315 1434 356.5 1477.0Q398 1520 459 1520Q520 1520 562.5 1477.0Q605 1434 605 1375Q605 1316 562.5 1272.5Q520 1229 459 1229Q398 1229 356.5 1272.5Q315 1316 315 1375ZM563 310Q495 139 423.0 59.5Q351 -20 236 -20Q148 -20 108.5 16.0Q69 52 69 112Q69 133 72.5 153.5Q76 174 80 190L278 893H132V920H492L262 93Q258 77 258 61Q258 24 292 24Q353 24 411.0 88.5Q469 153 537 319Z" transform="translate(11881,0)"/>
+<path d="M262 893H125V920H484L372 489Q421 602 487.0 705.5Q553 809 629.5 874.0Q706 939 786 939Q913 939 954.5 851.0Q996 763 960 639L802 103Q795 84 795 66Q795 30 829 30Q896 30 954.0 98.5Q1012 167 1073 319L1099 310Q1030 133 954.0 56.5Q878 -20 766 -20Q599 -20 599 120Q599 141 604.0 163.0Q609 185 614 202L742 623Q777 739 777.0 808.5Q777 878 712 878Q673 878 619.5 830.0Q566 782 510.0 700.0Q454 618 404.5 513.5Q355 409 322 294L246 0H32Z" transform="translate(12528,0)"/>
+<path d="M516 320Q410 320 332 365Q256 355 217.5 318.5Q179 282 179 244Q179 202 207.5 180.5Q236 159 280.5 151.0Q325 143 372 143Q407 143 457.5 143.5Q508 144 556.5 144.5Q605 145 634 145Q752 145 830.5 94.0Q909 43 909 -84Q909 -193 854.5 -275.0Q800 -357 710.5 -411.5Q621 -466 513.0 -493.0Q405 -520 298 -520Q84 -520 -11.5 -451.0Q-107 -382 -107 -279Q-107 -216 -65.5 -163.0Q-24 -110 38.0 -73.0Q100 -36 163 -22Q91 1 50.0 47.0Q9 93 9 156Q9 246 95.0 306.5Q181 367 307 381Q258 416 230.5 470.0Q203 524 203 593Q203 689 260.0 767.5Q317 846 411.0 892.5Q505 939 616 939Q782 939 870 830Q950 930 1056 930Q1117 930 1157.5 892.5Q1198 855 1198 794Q1198 745 1169.0 711.0Q1140 677 1090 677Q1046 677 1013.5 705.0Q981 733 981 781Q981 832 1015.5 860.0Q1050 888 1093 888Q1116 888 1137 879Q1105 906 1059 906Q961 906 885 810Q929 743 929 657Q929 562 871.5 485.5Q814 409 720.0 364.5Q626 320 516 320ZM491 348Q535 348 579.0 394.0Q623 440 660.0 510.5Q697 581 719.0 655.0Q741 729 741 786Q741 839 717.0 875.0Q693 911 640 911Q596 911 552.0 865.0Q508 819 471.0 749.0Q434 679 412.0 605.0Q390 531 390 474Q390 421 414.5 384.5Q439 348 491 348ZM64 -280Q64 -378 123.5 -433.0Q183 -488 307 -488Q455 -488 578.0 -442.5Q701 -397 774.0 -320.0Q847 -243 847 -151Q847 -94 810.0 -68.5Q773 -43 708 -43H311Q253 -43 204 -33Q140 -64 102.0 -130.0Q64 -196 64 -280Z" transform="translate(13723,0)"/>
+  </g>
+</svg></div>
 
       <div class="family-lines">
-        <p><strong>김영철 · 이순정</strong><span>의 아들</span><b>윤수한</b></p>
-        <p><strong>유준상 · 이영자</strong><span>의 딸</span><b>김서령</b></p>
+        <p><strong>윤중현 · 정길자</strong><span>의 아들</span><b>윤수한</b></p>
+        <p><strong>지혜숙</strong><span>의 딸</span><b>김서령</b></p>
       </div>
 
       <div class="invitation-copy">
         <p class="eyebrow">INVITATION</p>
-        <p>수한과 서령의 오늘이 모여<br>함께할 내일이 되었습니다.</p>
-        <p>우리로 시작되는 내일이 행복과 축복으로<br>가득 찰 수 있도록 함께 자리를 빛내주시면<br>더없는 기쁨으로 간직하겠습니다.</p>
+        <p>예쁜 예감이 들었다.<br>우리는 언제나 손을 잡고 있게 될 것이다.</p>
+        <p class="quote-source">이이체, &lt;연인&gt; 中</p>
+        <p class="message-block">저희 두 사람, 사랑으로 하나 되어 <br>평생의 동반자가 되려 합니다.</p>
+        <p class="message-block">저희 두 사람의 새로운 시작을 <br>함께 축복해 주시면 더없는 기쁨으로 간직하겠습니다.</p>
       </div>
     </section>
 
-    <section class="date-section section-pad">
-      <div class="date-title centered">
+    <section class="dark date-section section-pad">
+      <div class="date-title">
         <strong>2026.12.19</strong>
         <span>토요일 오후 4시</span>
       </div>
@@ -65,28 +136,34 @@
       </div>
     </section>
 
-    <section class="gallery section-pad">
-      <p class="eyebrow centered">GALLERY</p>
+    <section class="dark gallery section-pad">
+      <p class="eyebrow">GALLERY</p>
       <div class="gallery-grid">
         <button data-gallery="0"><img src="assets/photo-04.jpeg" alt="두 사람이 함께 있는 사진" loading="lazy"></button>
-        <button data-gallery="1"><img src="assets/photo-05.jpeg" alt="베일을 정리하는 두 사람" loading="lazy"></button>
-        <button data-gallery="2"><img src="assets/photo-07.jpeg" alt="신랑 신부와 반려견" loading="lazy"></button>
-        <button data-gallery="3"><img src="assets/photo-01.jpeg" alt="소파에 앉은 두 사람과 반려견" loading="lazy"></button>
-        <button data-gallery="4"><img src="assets/photo-06.jpeg" alt="손잡고 걷는 두 사람" loading="lazy"></button>
-        <button data-gallery="5" class="more-tile"><img src="assets/photo-09.jpeg" alt="신랑 신부와 반려견" loading="lazy"><span><b>+3</b><small>MORE</small></span></button>
+        <button data-gallery="1"><img src="assets/photo-05.jpeg" alt="두 사람이 함께 있는 사진" loading="lazy"></button>
+        <button data-gallery="2"><img src="assets/photo-07.jpeg" alt="두 사람과 반려견" loading="lazy"></button>
+        <button data-gallery="3"><img src="assets/photo-02.jpeg" alt="두 사람과 반려견" loading="lazy"></button>
+        <button data-gallery="4"><img src="assets/photo-06.jpeg" alt="두 사람이 함께 있는 사진" loading="lazy"></button>
+        <button data-gallery="5"><img src="assets/photo-09.jpeg" alt="두 사람과 반려견" loading="lazy"></button>
+        <button data-gallery="6"><img src="assets/photo-01.jpeg" alt="두 사람이 함께 있는 사진" loading="lazy"></button>
+        <button data-gallery="7"><img src="assets/photo-03.jpeg" alt="두 사람이 함께 있는 사진" loading="lazy"></button>
+        <button data-gallery="8" class="gallery-more-tile">
+          <img src="assets/photo-08.jpeg" alt="두 사람이 함께 있는 사진" loading="lazy">
+          <span class="gallery-more-overlay"><b>MORE</b></span>
+        </button>
       </div>
     </section>
 
-    <section class="location section-pad centered">
+    <section class="dark location section-pad">
       <p class="eyebrow">LOCATION</p>
-      <h2>논현2동성당</h2>
-      <p class="address">서울특별시 강남구 선릉로145길 17</p>
+      <h2>천주교 논현2동 성당</h2>
+      <p class="address">서울 강남구 선릉로145길 17<br>02-516-5066</p>
 
-      <div class="map-placeholder" aria-label="예식장 위치 지도">
+      <div class="map-placeholder" aria-label="논현2동성당 위치">
         <div class="roads r1"></div><div class="roads r2"></div><div class="roads r3"></div>
         <div class="map-pin">●</div>
         <span class="map-name">논현2동성당</span>
-        <span class="map-caption">서울 · 강남구 논현동</span>
+        <span class="map-caption">50m · kakao</span>
       </div>
 
       <div class="map-buttons">
@@ -96,24 +173,70 @@
       </div>
 
       <div class="transport">
-        <div><h3>[지하철]</h3><p>7호선·수인분당선 강남구청역 3-1번 출구<br>영동고등학교 방면 약 450m</p></div>
-        <div><h3>[버스]</h3><p>영동고교 앞: 301, 342, 472 / 3011, 4412<br>시네시티 앞: 145, 342 / 3011, 4212, 4419<br>제일은행 앞: 145, 440 / 3011, 4212</p></div>
-        <div><h3>[주차 안내]</h3><p>성당 주차공간이 협소하여 가급적 대중교통 이용을 권장드립니다.</p></div>
+        <div><h3>[지하철]</h3><p>수인분당선·7호선 강남구청역 3-1번 출구</p></div>
+        <div><h3>[주차 안내]</h3><p>· 성당 본당 주차<br>· 청호 주차장</p></div>
       </div>
     </section>
 
-    <section class="rsvp section-pad centered">
-      <h2>RSVP</h2>
-      <p>결혼식에 참석해주시는 모든 분들을<br>더욱 특별하게 모시고자 하오니,<br>참석 여부 전달을 부탁드립니다.</p>
-      <button class="pill">참석 의사 전달</button>
+    <section class="dark account section-pad">
+      <p class="eyebrow">ACCOUNT</p>
+      <p class="account-intro">마음 전하실 곳</p>
+      <p class="account-subcopy">축하의 마음만으로도 충분합니다.<br>따뜻한 마음 전해주실 분들을 위해 계좌 정보를 남깁니다.</p>
+      <details>
+        <summary>신랑측 계좌번호 <span>⌄</span></summary>
+        <div class="account-list">
+          <div class="account-row">
+            <div class="account-info"><strong>윤수한</strong><span>국민은행 59280204160144</span></div>
+            <button type="button" class="copy-account" data-copy-account="59280204160144">복사</button>
+          </div>
+          <div class="account-row">
+            <div class="account-info"><strong>윤중현</strong><span>국민은행 003240054896</span></div>
+            <button type="button" class="copy-account" data-copy-account="003240054896">복사</button>
+          </div>
+          <div class="account-row">
+            <div class="account-info"><strong>정길자</strong><span>신한은행 110211925406</span></div>
+            <button type="button" class="copy-account" data-copy-account="110211925406">복사</button>
+          </div>
+        </div>
+      </details>
+      <details>
+        <summary>신부측 계좌번호 <span>⌄</span></summary>
+        <div class="account-list">
+          <div class="account-row">
+            <div class="account-info"><strong>김서령</strong><span>하나은행 18991027885107</span></div>
+            <button type="button" class="copy-account" data-copy-account="18991027885107">복사</button>
+          </div>
+        </div>
+      </details>
     </section>
 
-    <section class="account section-pad centered">
-      <p class="eyebrow">ACCOUNT</p>
-      <p>축하 화환은 정중히 사양합니다</p>
-      <p class="account-copy">저희의 출발을 축하해 주시는<br>마음만으로도 충분합니다.<br>양가 부모님과 저희에게 전해주신 따뜻한 축복,<br>소중히 간직하며 예쁘게 잘 살겠습니다.</p>
-      <details><summary>신랑측 계좌번호 <span>⌄</span></summary><div>은행 · 000-0000-0000 · 윤수한</div></details>
-      <details><summary>신부측 계좌번호 <span>⌄</span></summary><div>은행 · 000-0000-0000 · 김서령</div></details>
+    <section class="dark rsvp section-pad">
+      <h2>RSVP</h2>
+      <p>결혼식에 참석해주시는 모든 분들을<br>더욱 특별하게 모시고자 하오니,<br>참석 여부 전달을 부탁드립니다.</p>
+      <button class="pill" id="openRsvpModal" type="button">참석 의사 전달</button>
+    </section>
+
+    <section class="dark gratitude section-pad">
+      <p class="eyebrow">WITH GRATITUDE</p>
+      <h2>화환은 정중히 사양합니다.</h2>
+      <p>축하의 마음만 감사히 받겠습니다.<br>너른 양해 부탁드립니다.</p>
+      <p>이를 대신하여 불우한 이웃을 위한 사랑의 쌀을 기증 받고 있습니다.<br>자세한 사항은 성당 사무실 (02-516-5066)로 문의 주시기 바랍니다.</p>
+    </section>
+
+    <section class="dark share section-pad">
+      <div class="short-line"></div>
+      <p class="eyebrow">SHARE</p>
+      <p>소중한 분들에게 청첩장을 전해주세요.</p>
+      <div class="share-buttons">
+        <button type="button" data-share="kakao"><span class="share-icon kakao-bubble" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M12 4.2c5.05 0 9.15 3.12 9.15 6.97 0 3.84-4.1 6.96-9.15 6.96-.74 0-1.46-.07-2.15-.19L6.1 20.2l.8-3.1C4.45 15.86 2.85 13.7 2.85 11.17 2.85 7.32 6.95 4.2 12 4.2Z" fill="currentColor"/>
+          </svg>
+        </span><small>KAKAO</small></button>
+        <button type="button" data-share="link"><span>↗</span><small>LINK</small></button>
+        <button type="button" data-share="top"><span>↑</span><small>TOP</small></button>
+      </div>
+      <p class="footer-copy">© SEORYUNG &amp; SUHAN· 2026.12.19</p>
     </section>
   </main>
 
@@ -125,5 +248,75 @@
     <div id="counter"></div>
   </div>
   <script src="script.js"></script>
+
+  <div class="rsvp-modal" id="rsvpModal" aria-hidden="true">
+    <div class="rsvp-modal-backdrop" data-rsvp-close></div>
+    <div class="rsvp-modal-card" role="dialog" aria-modal="true" aria-labelledby="rsvpModalTitle">
+      <div class="rsvp-modal-head">
+        <h2 id="rsvpModalTitle">참석 의사 전달</h2>
+        <button type="button" class="rsvp-modal-x" data-rsvp-close aria-label="닫기">×</button>
+      </div>
+
+      <form id="rsvpForm" class="rsvp-form">
+        <fieldset>
+          <legend>어느측 하객인가요? <span class="required-mark">*</span></legend>
+          <div class="rsvp-choice-grid two">
+            <label><input type="radio" name="side" value="신랑측" required><span>신랑측</span></label>
+            <label><input type="radio" name="side" value="신부측"><span>신부측</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>참석하실 수 있나요? <span class="required-mark">*</span></legend>
+          <div class="rsvp-choice-grid two">
+            <label><input type="radio" name="attendance" value="네" required><span>네</span></label>
+            <label><input type="radio" name="attendance" value="아니오"><span>아니오</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>식사 여부</legend>
+          <div class="rsvp-choice-grid three">
+            <label><input type="radio" name="meal" value="예"><span>예</span></label>
+            <label><input type="radio" name="meal" value="아니오"><span>아니오</span></label>
+            <label><input type="radio" name="meal" value="미정"><span>미정</span></label>
+          </div>
+        </fieldset>
+
+        <label class="rsvp-field">
+          <span>성함 <span class="required-mark">*</span></span>
+          <input type="text" name="name" placeholder="참석자 본인 성함" autocomplete="name" required>
+        </label>
+
+        <label class="rsvp-field">
+          <span>연락처</span>
+          <input type="tel" name="phone" placeholder="01012345678" inputmode="numeric" autocomplete="tel">
+        </label>
+
+        <div class="rsvp-field">
+          <span>동행인 수 (본인 제외)</span>
+          <div class="rsvp-stepper">
+            <button type="button" id="guestMinus" aria-label="동행인 수 줄이기">−</button>
+            <output id="guestCount" aria-live="polite">0</output>
+            <button type="button" id="guestPlus" aria-label="동행인 수 늘리기">+</button>
+          </div>
+          <input type="hidden" name="companions" id="guestCountInput" value="0">
+        </div>
+
+        <p class="rsvp-form-status" id="rsvpFormStatus" aria-live="polite"></p>
+        <button type="submit" class="rsvp-submit" disabled>제출하기</button>
+      </form>
+    </div>
+  </div>
+
+
+  <div class="rsvp-success-modal" id="rsvpSuccessModal" aria-hidden="true">
+    <div class="rsvp-success-backdrop" data-success-close></div>
+    <div class="rsvp-success-card" role="dialog" aria-modal="true" aria-labelledby="rsvpSuccessTitle">
+      <p id="rsvpSuccessTitle">제출이 완료되었습니다.<br>감사합니다.</p>
+      <button type="button" class="rsvp-success-close" data-success-close>닫기</button>
+    </div>
+  </div>
+
 </body>
 </html>

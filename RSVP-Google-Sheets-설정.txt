@@ -1,0 +1,16 @@
+Google Sheets RSVP 연결 방법
+
+1. Google 스프레드시트에 'RSVP' 시트를 만듭니다.
+2. 첫 행에 아래 헤더를 추가합니다.
+   제출일시 | 하객 구분 | 참석 여부 | 식사 여부 | 성함 | 연락처 | 동행인 수
+3. 확장 프로그램 > Apps Script에서 google-apps-script.gs 내용을 붙여넣습니다.
+4. 배포 > 새 배포 > 웹 앱
+   - 실행 사용자: 나
+   - 액세스 권한: 모든 사용자
+5. 배포 후 발급된 /exec URL을 복사합니다.
+6. script.js의 아래 값을 교체합니다.
+   const RSVP_API_URL = 'PASTE_GOOGLE_APPS_SCRIPT_EXEC_URL_HERE';
+
+
+현재 연결된 웹앱 URL:
+https://script.google.com/macros/s/AKfycbxYdPvTRdCLqBxox5u0ys41ooFEmiDrw-QQaqGeLkC45i4h0VY0AoZk9uwOJouTe4-i2w/exec
