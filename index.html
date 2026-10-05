@@ -15,6 +15,14 @@
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400&display=swap" rel="stylesheet">
+  <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.8.3/kakao.min.js" crossorigin="anonymous"></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      if (window.Kakao && !Kakao.isInitialized()) {
+        Kakao.init('a3e39349ecc97d2539488d1540e62fd1');
+      }
+    });
+  </script>
 </head>
 <body>
 
@@ -249,7 +257,6 @@
     <div id="counter"></div>
   </div>
   <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=a3e39349ecc97d2539488d1540e62fd1&autoload=false&libraries=services"></script>
-  <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.8.3/kakao.min.js" crossorigin="anonymous"></script>
   <script src="script.js"></script>
 
   <div class="rsvp-modal" id="rsvpModal" aria-hidden="true">

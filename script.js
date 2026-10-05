@@ -38,7 +38,6 @@ document.querySelector('[data-share="native"]')?.addEventListener('click', async
 });
 (() => {
   const kakaoButton = document.querySelector('[data-share="kakao"]');
-  const KAKAO_JS_KEY = 'a3e39349ecc97d2539488d1540e62fd1';
   const WEDDING_URL = 'https://wedding-seoryungsuhan.vercel.app/';
   const WEDDING_IMAGE_URL = 'https://wedding-seoryungsuhan.vercel.app/assets/photo-01.jpeg';
 
@@ -46,12 +45,12 @@ document.querySelector('[data-share="native"]')?.addEventListener('click', async
 
   kakaoButton.addEventListener('click', () => {
     if (!window.Kakao) {
-      alert('카카오톡 공유 기능을 불러오지 못했습니다. 잠시 후 다시 시도해주세요.');
+      alert('카카오 SDK를 불러오지 못했습니다. 페이지를 새로고침한 뒤 다시 시도해주세요.');
       return;
     }
 
     if (!Kakao.isInitialized()) {
-      Kakao.init(KAKAO_JS_KEY);
+      Kakao.init('a3e39349ecc97d2539488d1540e62fd1');
     }
 
     Kakao.Share.sendDefault({
